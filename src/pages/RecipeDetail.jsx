@@ -19,9 +19,7 @@ function RecipeDetail() {
 
         setLoading(true);
 
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
-        );
+        const response = await axios.get( `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}` );
 
         setRecipe(response.data.meals?.[0]);
 
@@ -57,10 +55,7 @@ function RecipeDetail() {
 
       <h1>{recipe.strMeal}</h1>
 
-      <img
-        src={recipe.strMealThumb}
-        alt={recipe.strMeal}
-      />
+      <img src={recipe.strMealThumb} alt={recipe.strMeal}   />
 
       <h3>Category</h3>
       <p>{recipe.strCategory}</p>
