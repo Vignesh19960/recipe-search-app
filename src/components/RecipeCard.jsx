@@ -4,10 +4,7 @@ function RecipeCard({ recipe, onSave, isFavourite }) {
   return (
     <div className="recipe-card">
 
-      <img
-        src={recipe.strMealThumb}
-        alt={recipe.strMeal}
-      />
+      <img src={recipe.strMealThumb}  alt={recipe.strMeal} />
 
       <div className="recipe-content">
 
@@ -21,20 +18,12 @@ function RecipeCard({ recipe, onSave, isFavourite }) {
           Area: {recipe.strArea}
         </p>
 
-        <Link
-          to={`/recipes/${recipe.idMeal}`}
-          className="details-btn"
-        >
+        <Link to={`/recipes/${recipe.idMeal}`} className="details-btn"  >
           View Details
         </Link>
 
-        <button
-          onClick={() => onSave(recipe)}
-          className="favourite-btn"
-        >
-          {isFavourite
-            ? "❤️ Saved"
-            : "🤍 Save to Favourites"}
+        <button onClick={() => onSave(recipe)} className="favourite-btn"  >
+          {isFavourite  ? "❤️ Saved"  : "🤍 Save to Favourites"}
         </button>
 
       </div>
