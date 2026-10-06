@@ -8,11 +8,7 @@ function Recipes({ favourites, onSave }) {
   const [input, setInput] = useState("");
   const [query, setQuery] = useState("");
 
-  const {
-    data,
-    loading,
-    error
-  } = useRecipes(query);
+  const { data, loading, error } = useRecipes(query);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -35,17 +31,9 @@ function Recipes({ favourites, onSave }) {
 
       <h1>Search Recipes</h1>
 
-      <form
-        onSubmit={handleSubmit}
-        className="search-form"
-      >
+      <form onSubmit={handleSubmit} className="search-form" >
 
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Search for chicken, pasta, cake..."
-        />
+        <input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Search for chicken, pasta, cake..."  />
 
         <button type="submit">
           Search
@@ -70,12 +58,7 @@ function Recipes({ favourites, onSave }) {
       <div className="recipe-grid">
 
         {data.map((recipe) => (
-          <RecipeCard
-            key={recipe.idMeal}
-            recipe={recipe}
-            onSave={onSave}
-            isFavourite={isFavourite(recipe.idMeal)}
-          />
+          <RecipeCard  key={recipe.idMeal}  recipe={recipe}   onSave={onSave} isFavourite={isFavourite(recipe.idMeal)} />
         ))}
 
       </div>
