@@ -1,9 +1,5 @@
 import { useState } from "react";
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 
@@ -21,8 +17,7 @@ function App() {
     setFavourites((previous) => {
 
       const alreadyExists = previous.some(
-        (item) => item.idMeal === recipe.idMeal
-      );
+        (item) => item.idMeal === recipe.idMeal );
 
       if (alreadyExists) {
         return previous;
@@ -49,35 +44,13 @@ function App() {
 
       <Routes>
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/recipes"
-          element={
-            <Recipes
-              favourites={favourites}
-              onSave={saveFavourite}
-            />
-          }
-        />
+        <Route path="/recipes" element={ <Recipes favourites={favourites} onSave={saveFavourite} /> } />
 
-        <Route
-          path="/recipes/:id"
-          element={<RecipeDetail />}
-        />
+        <Route path="/recipes/:id"  element={<RecipeDetail />} />
 
-        <Route
-          path="/favourites"
-          element={
-            <Favourites
-              favourites={favourites}
-              onRemove={removeFavourite}
-            />
-          }
-        />
+        <Route path="/favourites" element={ <Favourites favourites={favourites} onRemove={removeFavourite} /> } />
 
       </Routes>
 
